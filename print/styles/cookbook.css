@@ -1,0 +1,565 @@
+/* The Heartland Table — Print Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap');
+
+/* === Page Setup === */
+@page {
+  size: 8in 10in;
+  margin: 0.75in 0.625in 0.75in 0.625in;
+  
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 10pt;
+    color: #8B9E82;
+  }
+}
+
+@page :first {
+  @bottom-center { content: none; }
+}
+
+@page chapter-start {
+  @bottom-center { content: none; }
+}
+
+/* === Root Variables === */
+:root {
+  /* Primary */
+  --amber-gold: #D4A843;
+  --warm-wheat: #E8D5A3;
+  --cream: #F5F0E1;
+  
+  /* Secondary */
+  --muted-sage: #8B9E82;
+  --deep-brown: #3D2B1F;
+  --charcoal: #2C2C2C;
+  
+  /* Accent */
+  --deep-cranberry: #8B2252;
+  --rustic-red: #A0522D;
+  
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif Pro', Georgia, serif;
+  --font-ui: 'Source Sans Pro', -apple-system, sans-serif;
+}
+
+/* === Base === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--deep-brown);
+  background: var(--cream);
+}
+
+/* === Typography === */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--rustic-red);
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+/* === Recipe Page === */
+.recipe-page {
+  page-break-before: always;
+  page-break-inside: avoid;
+  min-height: 100%;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid var(--amber-gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.recipe-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--rustic-red);
+}
+
+.recipe-region {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.recipe-intro {
+  font-style: italic;
+  color: var(--deep-brown);
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  border-left: 3px solid var(--warm-wheat);
+  padding-left: 1rem;
+}
+
+/* === At a Glance Box === */
+.at-a-glance {
+  background: var(--warm-wheat);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.at-a-glance-item {
+  text-align: center;
+}
+
+.at-a-glance-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-sage);
+  display: block;
+}
+
+.at-a-glance-value {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+/* === Two Column Layout === */
+.recipe-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+}
+
+/* === Ingredients === */
+.ingredients {
+  background: #fff;
+  border: 1px solid var(--warm-wheat);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.ingredients h3 {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-sage);
+  border-bottom: 1px solid var(--warm-wheat);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ingredients ul {
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+
+.ingredients li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted var(--warm-wheat);
+}
+
+.ingredients li:last-child {
+  border-bottom: none;
+}
+
+.ingredient-amount {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+/* === Instructions === */
+.instructions h3 {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-sage);
+  border-bottom: 1px solid var(--warm-wheat);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.instructions ol {
+  padding-left: 1.5rem;
+}
+
+.instructions li {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* === Grandma's Secret Box === */
+.grandma-secret {
+  background: linear-gradient(135deg, var(--warm-wheat) 0%, #fff 100%);
+  border: 2px dashed var(--amber-gold);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.25rem;
+  position: relative;
+}
+
+.grandma-secret::before {
+  content: "🤫";
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  background: var(--cream);
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.grandma-secret-title {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rustic-red);
+  margin-bottom: 0.5rem;
+}
+
+.grandma-secret p {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* === Pairs Well With === */
+.pairs-well-with {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--muted-sage);
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--warm-wheat);
+}
+
+.pairs-well-with strong {
+  color: var(--rustic-red);
+}
+
+/* === Did You Know === */
+.did-you-know {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--deep-brown);
+  background: linear-gradient(to right, var(--warm-wheat), transparent);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  border-left: 3px solid var(--amber-gold);
+  font-style: italic;
+}
+
+.did-you-know strong {
+  font-style: normal;
+  color: var(--rustic-red);
+}
+
+/* === Midwest Nice Rating === */
+.midwest-nice-rating {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.midwest-nice-rating .filled {
+  color: var(--amber-gold);
+}
+
+.midwest-nice-rating .empty {
+  color: var(--warm-wheat);
+}
+
+/* === Chapter Opener === */
+.chapter-opener {
+  page: chapter-start;
+  page-break-before: always;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--charcoal);
+  color: var(--cream);
+  margin: -0.75in -0.625in;
+  padding: 2in;
+}
+
+.chapter-number {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--amber-gold);
+  line-height: 1;
+}
+
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-top: 0.5rem;
+  border-bottom: 3px solid var(--amber-gold);
+  padding-bottom: 0.5rem;
+}
+
+.chapter-count {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--muted-sage);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* === Special Section === */
+.special-section {
+  page-break-before: always;
+  border: 3px double var(--amber-gold);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+}
+
+.special-section h2 {
+  text-align: center;
+  color: var(--deep-cranberry);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--warm-wheat);
+}
+
+.special-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.special-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--rustic-red);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.special-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.special-content li {
+  margin-bottom: 0.5rem;
+}
+
+.special-content blockquote {
+  border-left: 3px solid var(--amber-gold);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--muted-sage);
+}
+
+.special-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.special-content td {
+  padding: 0.5rem;
+  border: 1px solid var(--warm-wheat);
+}
+
+.special-content tr:nth-child(even) {
+  background: var(--warm-wheat);
+}
+
+/* === Table of Contents === */
+.toc {
+  page-break-before: always;
+}
+
+.toc h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--rustic-red);
+}
+
+.toc-chapter {
+  margin-bottom: 1.5rem;
+}
+
+.toc-chapter-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--warm-wheat);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.toc-chapter-title:hover {
+  color: var(--rustic-red);
+}
+
+.toc-recipes {
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+
+.toc-recipes li {
+  padding: 0.25rem 0;
+}
+
+.toc-recipes li a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.toc-recipes li a:hover {
+  color: var(--rustic-red);
+}
+
+.toc-recipes .dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--warm-wheat);
+  margin: 0 0.5rem 0.25rem;
+}
+
+/* === Cover Page === */
+.cover-page {
+  page-break-before: always;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* === Title Page === */
+.title-page {
+  page-break-before: always;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title-page h1 {
+  font-size: 3.5rem;
+  color: var(--rustic-red);
+  margin-bottom: 0.5rem;
+}
+
+.title-page .subtitle {
+  font-family: var(--font-ui);
+  font-size: 1.25rem;
+  color: var(--muted-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.title-page .tagline {
+  font-style: italic;
+  color: var(--deep-brown);
+  margin-top: 2rem;
+  max-width: 400px;
+}
+
+/* === Recipe Image === */
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.recipe-image-placeholder {
+  width: 100%;
+  height: 200px;
+  background: var(--warm-wheat);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-sage);
+  font-family: var(--font-ui);
+  margin-bottom: 1rem;
+}
+
+/* === Print Utilities === */
+.page-break {
+  page-break-after: always;
+}
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
