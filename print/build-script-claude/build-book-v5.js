@@ -20,11 +20,11 @@ const path = require('path');
 
 // === Configuration ===
 const CONFIG = {
-  rootDir: path.resolve(__dirname, '..'),
-  outputDir: path.resolve(__dirname, 'output'),
-  recipesDir: path.resolve(__dirname, '..', 'Recipes'),
-  imagesDir: path.resolve(__dirname, '..', 'Images'),
-  coverDir: path.resolve(__dirname, '..', 'Cover'),
+  rootDir: path.resolve(__dirname, '../..'),
+  outputDir: path.resolve(__dirname, '../output'),
+  recipesDir: path.resolve(__dirname, '../..', 'Recipes'),
+  imagesDir: path.resolve(__dirname, '../..', 'Images'),
+  coverDir: path.resolve(__dirname, '../..', 'Cover'),
 };
 
 // Chapter order
