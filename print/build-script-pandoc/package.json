@@ -1,0 +1,13 @@
+{
+  "name": "heartland-table-pandoc",
+  "version": "1.0.0",
+  "description": "Pandoc build system for The Heartland Table cookbook",
+  "scripts": {
+    "build": "./build-cookbook.sh",
+    "preview": "./preview.sh",
+    "clean": "rm -rf temp/ output/"
+  },
+  "keywords": ["cookbook", "pandoc", "pdf"],
+  "author": "Prairie Modern Cooking",
+  "license": "MIT"
+}

@@ -1,0 +1,42 @@
+---
+title: "The Heartland Table"
+subtitle: "A Midwest Cookbook"
+author: "Prairie Modern Cooking"
+date: "2026"
+lang: "en-US"
+papersize: letter
+documentclass: book
+geometry:
+  - paperwidth=8in
+  - paperheight=10in
+  - margin=0.75in
+  - bindingoffset=0.25in
+fontsize: 11pt
+mainfont: "Liberation Serif"
+sansfont: "Liberation Sans"
+monofont: "Liberation Mono"
+linestretch: 1.15
+toc: true
+toc-depth: 2
+toc-title: "Table of Contents"
+numbersections: false
+colorlinks: true
+linkcolor: Maroon
+urlcolor: Maroon
+header-includes: |
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{multicol}
+  \usepackage{xcolor}
+  \usepackage{float}
+  \definecolor{heartlandrust}{RGB}{160,82,45}
+  \definecolor{heartlandsage}{RGB}{139,158,130}
+  \definecolor{heartlandgold}{RGB}{212,168,67}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[RE]{\textit{The Heartland Table}}
+  \fancyhead[LO]{\textit{\leftmark}}
+  \renewcommand{\headrulewidth}{0.5pt}
+  \renewcommand{\footrulewidth}{0pt}
+---
